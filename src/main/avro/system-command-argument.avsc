@@ -1,0 +1,16 @@
+{
+  "name": "SystemCommandArgument",
+  "namespace": "com.gizmo.reactor.message",
+  "type": "record",
+  "version": "1.0",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "value",
+      "type": "string"
+    }
+  ]
+}

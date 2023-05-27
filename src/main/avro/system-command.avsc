@@ -1,0 +1,30 @@
+{
+    "name": "SystemCommand",
+    "namespace": "com.gizmo.reactor.message",
+    "type": "record",
+    "version": "1.0",
+    "fields": [
+        {
+            "name": "id",
+            "type": {
+                "type": "string",
+                "logicalType": "uuid"
+            }
+        },
+        {
+            "name": "user",
+            "type": "string"
+        },
+        {
+            "name": "command",
+            "type": "string"
+        },
+        {
+            "name": "arguments",
+            "type": {
+                "type": "array",
+                "items": ["SystemCommandArgument"]
+            }
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/Reactor"
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+    hikari:
+      schema: "system"
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  sql:
+    init:
+      platform: postgresql
+      mode: always
+  kafka:
+    reconnectBackoffMs: 5000
+    retryBackoffMs : 5000
+    autoOffsetReset: "earliest"
+    autoCommit: "true"
+    retries: 1
+    listener:
+      ack-mode: record
+    avro:
+      specificAvroReader: "true"
+    bootstrap-servers: "192.168.0.53:9092"
+    schema:
+      registry:
+        url: "http://192.168.0.53:8081"
+    group-id: "Reactor"
+    topic:
+      reactor: "reactor-inbound"
+      command: "command-inbound"
+
+
+  openAI:
+    token: ":P:P:P:P:P"
+
+application:
+  server: "localhost:8081"
